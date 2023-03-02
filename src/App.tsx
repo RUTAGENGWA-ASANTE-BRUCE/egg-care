@@ -9,12 +9,14 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Ethereum from "./pages/Etherieum";
+import Arbitrum from "./pages/Arbitrum";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ethereum" element={<Ethereum />} />
+        <Route path="/arbitrum" element={<Arbitrum />} />
       </Routes>
     </BrowserRouter>
   );
