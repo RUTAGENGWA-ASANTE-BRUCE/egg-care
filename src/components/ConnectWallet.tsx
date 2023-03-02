@@ -1,13 +1,12 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import MetamaskLogo from '../assets/MetaMask_Fox.png';
-import RainbowLogo from '../assets/rainbow-wallet.png';
-import CoinbaseWlletLogo from '../assets/coinbase.jpg';
-import WalletConnectLogo from '../assets/walletConnect.png';
+import MetamaskLogo from "../assets/MetaMask_Fox.png";
+import RainbowLogo from "../assets/rainbow-wallet.png";
+import CoinbaseWlletLogo from "../assets/coinbase.jpg";
+import WalletConnectLogo from "../assets/walletConnect.png";
 
 import { wallet } from "../utils/types";
-
 
 export default function ConnectWallet() {
   let [isOpen, setIsOpen] = useState(false);
@@ -20,24 +19,24 @@ export default function ConnectWallet() {
     setIsOpen(true);
   }
 
-  const wallets:wallet[]=[
+  const wallets: wallet[] = [
     {
-      name:"Metamask",
-      logo:MetamaskLogo,
+      name: "Metamask",
+      logo: MetamaskLogo,
     },
     {
-      name:"Rainbow",
-      logo:RainbowLogo,
+      name: "Rainbow",
+      logo: RainbowLogo,
     },
     {
-      name:"Coinbase Wallet",
-      logo:CoinbaseWlletLogo,
+      name: "Coinbase Wallet",
+      logo: CoinbaseWlletLogo,
     },
     {
-      name:"WalletConnect",
-      logo:WalletConnectLogo,
-    }
-  ]
+      name: "WalletConnect",
+      logo: WalletConnectLogo,
+    },
+  ];
 
   return (
     <>
@@ -92,20 +91,23 @@ export default function ConnectWallet() {
                     </button>
                   </div>
 
-                    <p className="text-sm mt-7 font-semibold text-gray-500">
-                      Popular
-                    </p>
+                  <p className="text-sm mt-7 font-semibold text-gray-500">
+                    Popular
+                  </p>
                   <div className="mt-3 flex flex-col space-y-3">
                     {wallets.map((wallet, index) => (
-                        <button className="flex flex-row space-x-3 w-full p-1.5 hover:bg-gray-100 rounded-md">
-                          <img src={wallet.logo} className="w-8 h-8  rounded-md" />
-                          <p className="mt-1 font-bold">{wallet.name}</p>
-                        </button>
-                        ))}
+                      <button className="flex flex-row space-x-3 w-full p-1.5 hover:bg-gray-100 rounded-md">
+                        <img
+                          src={wallet.logo}
+                          className="w-8 h-8  rounded-md"
+                        />
+                        <p className="mt-1 font-bold">{wallet.name}</p>
+                      </button>
+                    ))}
                   </div>
                   <p className="text-sm mt-7 font-semibold text-gray-500">
-                      New to Etherium wallets?
-                    </p>
+                    New to Etherium wallets?
+                  </p>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
